@@ -1,1 +1,1 @@
-# Machine Leanring Capstone
+# Machine Learning Capstone
