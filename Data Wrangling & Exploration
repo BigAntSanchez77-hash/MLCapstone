@@ -1,1 +1,75 @@
+The dataset was cleaned and prepared to improve data quality and ensure reliable model performance. 
+The goal of the data wrangling phase was to identify and address missing values, remove duplicate records, detect outliers, and prepare the dataset for feature extraction and model training.
+
+Data cleaning steps:
+Loaded the dataset into a Pandas DataFrame for analysis.
+Inspected dataset structure, data types, and feature distributions.
+Removed duplicate records to prevent bias during model training.
+Verified genre labels for consistency (e.g., ensuring "Hip-Hop" and "Hip Hop" were standardized).
+Checked for corrupted or incomplete audio files.
+Converted categorical genre labels into numerical format using label encoding.
+Normalized numerical audio features to ensure consistent scaling across variables.
+
+Handling Missing Values:
+The dataset was evaluated for missing values using: df.isnull().sum()
+Missing values were identified in several audio feature columns.
+Missing genre labels were removed because they cannot be used for supervised learning.
+For numerical features: df.fillna(df.median(), inplace=True)
+
+Notes:
+Median imputation is less sensitive to extreme values than mean imputation.
+Preserves dataset size.
+
+For records with missing genre labels: df.dropna(subset=['genre'], inplace=True)
+
+Notes:
+Genre labels are required as the target variable.
+
+Outlier Detection and Treatment
+The Interquartile Range (IQR) method was used: Q1 = df['tempo'].quantile(0.25), Q3 = df['tempo'].quantile(0.75),IQR = Q3 - Q1
+
+Notes:
+Audio datasets often contain outliers caused by:
+Corrupted recordings
+Very short audio clips
+Extremely loud or quiet recordings
+Feature extraction errors
+Detection Method
+
+Handling Approach
+
+Instead of removing all outliers, values were capped (winsorized) to preserve rare but legitimate musical characteristics.
+
+lower = Q1 - 1.5 * IQR
+upper = Q3 + 1.5 * IQR
+
+df['tempo'] = df['tempo'].clip(lower, upper)
+
+Notes:
+In music datasets, unusual tempos, frequencies, or spectral characteristics may represent legitimate genre-specific traits rather than bad data.
+
+Dataset Size Considerations
+
+The original dataset contained approximately 308 audio samples.
+
+Training on the entire dataset was feasible because:
+Audio features had already been extracted.
+Memory requirements remained manageable.
+
+Prototype Dataset Strategy
+A stratified sample was created to preserve genre distribution: from sklearn.model_selection import train_test_split, sample_df, _ = train_test_split( df, train_size=0.25, stratify=df['genre'], random_state=42)
+
+Notes:
+Faster experimentation
+Reduced training time
+Maintains balanced genre representation
+Enables rapid testing of different algorithms
+
+Final Dataset Preparation
+
+The final preprocessing steps included:
+Feature normalization using StandardScaler
+Label encoding of genre categories
+Train/Test split (80/20)
+Validation of class balance
 
