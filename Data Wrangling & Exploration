@@ -50,7 +50,7 @@ In music datasets, unusual tempos, frequencies, or spectral characteristics may 
 
 Dataset Size Considerations
 
-The original dataset contained approximately 308 audio samples.
+The original dataset contained approximately 1000 audio samples.
 
 Training on the entire dataset was feasible because:
 Audio features had already been extracted.
