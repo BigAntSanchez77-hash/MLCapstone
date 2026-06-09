@@ -103,8 +103,8 @@ music-genre-classifier/
 ├── best_model_pipeline.joblib              # Trained model (StandardScaler + classifier)
 ├── label_encoder.joblib                    # Genre label encoder
 ├── feature_columns.json                    # Feature column order
-├── capstone_step7_model_experimentation.ipynb   # Model comparison & tuning
-├── capstone_step8_scale_prototype.ipynb         # Scaling pipeline
+├── Capstone_ModelExperiment.ipynb   # Model comparison & tuning
+├── Capstone_Scaling.ipynb         # Scaling pipeline
 ├── capstone_step9_deployment_plan.md            # Deployment method selection
 ├── capstone_step10_deployment_architecture.md   # Architecture design
 ├── demo_api_usage.ipynb                         # API usage demo notebook
