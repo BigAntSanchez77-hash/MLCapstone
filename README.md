@@ -63,11 +63,11 @@ python app.py
 
 ```bash
 # 1. Run Step 7 notebook (model experimentation)
-jupyter notebook capstone_step7_model_experimentation.ipynb
+jupyter notebook Capstone_ModelExperiment.ipynb
 # → Produces: best_model_pipeline.joblib, label_encoder.joblib, feature_columns.json
 
 # 2. Run Step 8 notebook (scaling)
-jupyter notebook capstone_step8_scale_prototype.ipynb
+jupyter notebook Capstone_Scaling.ipynb
 
 # 3. Copy artifacts to the app directory and run
 python app.py
