@@ -149,8 +149,8 @@ Blues · Classical · Country · Disco · Hip-Hop · Jazz · Metal · Pop · Reg
 
 | Step | Description | Deliverable |
 |---|---|---|
-| 7 | Experiment with various models | [Notebook](capstone_step7_model_experimentation.ipynb) — 10 models compared, hyperparameter tuning, ensembles |
-| 8 | Scale your prototype | [Notebook](capstone_step8_scale_prototype.ipynb) — parallel extraction, PySpark, batch inference |
+| 7 | Experiment with various models | [Notebook](Capstone_ModelExperiment.ipynb) — 10 models compared, hyperparameter tuning, ensembles |
+| 8 | Scale your prototype | [Notebook](Capstone_Scaling.ipynb) — parallel extraction, PySpark, batch inference |
 | 9 | Pick deployment method | [Plan](capstone_step9_deployment_plan.md) — Gradio on HF Spaces selected |
 | 10 | Design deployment architecture | [Architecture](capstone_step10_deployment_architecture.md) — diagram, write-up, checklist |
 | 11 | Deploy to production | This repository + [Live App](https://huggingface.co/spaces/AntSanchez77/music-genre-classifier) |
