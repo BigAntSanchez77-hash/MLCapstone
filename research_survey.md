@@ -49,14 +49,11 @@ reproduced 79% vs. the paper's reported 89% on the matched 5-genre subset; 66% a
 full 10-genre scope, in line with Tzanetakis & Cook (61%) and chittalpatel's
 classical-ML result (~65%).
 
-## Discussion points for mentor
+## Discussion points:
 
 - Classical ML (Random Forest on handcrafted features) tops out around 66-78%
   accuracy at 10 genres across every source surveyed; deep learning (CNN on
   spectrograms, or transfer-learned embeddings) reaches 75-90%+ but needs raw
   audio, not just an extracted-feature CSV.
 - MFCCs are consistently the dominant signal for genre across all sources.
-- Proposed Step 7 direction: use this reproduction's Random Forest as the
-  baseline to beat; prioritize gradient-boosted trees (XGBoost/LightGBM) and
-  adding spectral contrast as a feature; treat a CNN-on-spectrogram approach
-  as a stretch goal / comparison point rather than the primary plan.
+
